@@ -1,26 +1,329 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </title>Kiisi's Store</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Kiisi's Store | Fancy Finds for Everyone</title>
+
+    <!-- Connect HTML to CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header>
-    <a href="index.html">Kiisi's Store</a>
-    
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <!-- Store Name / Logo -->
+        <div class="logo">
+            Kiisi's Store
+        </div>
+
+        <!-- Navigation -->
         <nav>
+
             <a href="index.html">Home</a>
+
             <a href="shop.html">Shop</a>
-            <a href="product.html">Product</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="wishlist.html">♡ Wishlist</a>
+
+            <a href="cart.html">🛒 Cart</a>
+
         </nav>
-        div class="header-icons">
-            <a href="wishlist.html">Wishlist</a>
-            <a href="cart.html">Cart</a>
-            <a href="checkout.html">Checkout</a>
-  </div>
-    
+
+        <!-- Search Bar -->
+        <div class="search-box">
+
+            <input 
+                type="search" 
+                id="searchInput"
+                placeholder="Search for products..."
+            >
+
+            <button type="button">
+                🔍
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-small-text">
+                WELCOME TO KIISI'S STORE
+            </p>
+
+            <h1>
+                Fancy Finds,<br>
+                Made For You.
+            </h1>
+
+            <p>
+                Discover beautiful, fun and stylish products
+                for your everyday life.
+            </p>
+
+            <a href="shop.html" class="hero-button">
+                Shop Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories">
+
+        <h2>Shop By Category</h2>
+
+        <div class="category-container">
+
+            <a href="shop.html?category=fashion" class="category-card">
+                <div class="category-image">
+                    Image
+                </div>
+
+                <h3>Fashion</h3>
+            </a>
+
+
+            <a href="shop.html?category=beauty" class="category-card">
+                <div class="category-image">
+                    Image
+                </div>
+
+                <h3>Beauty</h3>
+            </a>
+
+
+            <a href="shop.html?category=accessories" class="category-card">
+                <div class="category-image">
+                    Image
+                </div>
+
+                <h3>Accessories</h3>
+            </a>
+
+
+            <a href="shop.html?category=home" class="category-card">
+                <div class="category-image">
+                    Image
+                </div>
+
+                <h3>Home & Living</h3>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+
+    <section class="featured-products">
+
+        <div class="section-heading">
+
+            <h2>Featured Products</h2>
+
+            <a href="shop.html">
+                View All
+            </a>
+
+        </div>
+
+
+        <div class="product-container" id="featuredProducts">
+
+            <!-- Products will be added here by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEW ARRIVALS ================= -->
+
+    <section class="new-arrivals">
+
+        <div class="section-heading">
+
+            <h2>New Arrivals</h2>
+
+            <a href="shop.html">
+                Shop New Arrivals
+            </a>
+
+        </div>
+
+
+        <div class="product-container" id="newProducts">
+
+            <!-- Products will be added here by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROMOTION ================= -->
+
+    <section class="promotion">
+
+        <div class="promotion-content">
+
+            <p>KIISI'S STORE</p>
+
+            <h2>
+                Something Fancy Is Waiting For You
+            </h2>
+
+            <p>
+                Explore our collection and find something
+                you'll love.
+            </p>
+
+            <a href="shop.html" class="promotion-button">
+                Explore Store
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <!-- Store Information -->
+
+            <div class="footer-section">
+
+                <h3>
+                    Kiisi's Store
+                </h3>
+
+                <p>
+                    Your destination for fancy,
+                    beautiful and interesting finds.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+
+            <div class="footer-section">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+
+            <!-- Customer Service -->
+
+            <div class="footer-section">
+
+                <h3>
+                    Customer Service
+                </h3>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Delivery Information
+                </a>
+
+                <a href="#">
+                    Returns & Refunds
+                </a>
+
+                <a href="#">
+                    FAQs
+                </a>
+
+            </div>
+
+
+            <!-- Social Media -->
+
+            <div class="footer-section">
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Kiisi's Store. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+                    </html>
