@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Your Cart | Kiisi's Store</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+
+        <div class="logo">
+            Kiisi's Store
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="wishlist.html">
+                ♡ Wishlist
+            </a>
+
+            <a href="cart.html">
+                🛒 Cart
+            </a>
+
+        </nav>
+
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+            <button type="button">
+                🔍
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CART PAGE
+         ========================= -->
+
+    <main class="cart-page">
+
+
+        <section class="cart-heading">
+
+            <p class="hero-small-text">
+                KIISI'S STORE
+            </p>
+
+            <h1>
+                Your Shopping Cart
+            </h1>
+
+            <p>
+                Review your items before checkout.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             CART CONTENT
+             ========================= -->
+
+        <section class="cart-section">
+
+
+            <div class="cart-layout">
+
+
+                <!-- Cart items -->
+
+                <div
+                    class="cart-items"
+                    id="cartItems"
+                >
+
+                    <!-- JavaScript will put
+                         cart items here -->
+
+                </div>
+
+
+
+                <!-- Cart summary -->
+
+                <aside class="cart-summary">
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="cartDelivery">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-divider">
+                    </div>
+
+
+                    <div class="summary-row total-row">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="cartTotal">
+                            ₦0
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="checkout.html"
+                        class="checkout-button"
+                        id="checkoutButton"
+                    >
+                        Proceed to Checkout
+                    </a>
+
+
+                    <a
+                        href="shop.html"
+                        class="continue-shopping"
+                    >
+                        ← Continue Shopping
+                    </a>
+
+                </aside>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-section">
+
+                <h3>
+                    Kiisi's Store
+                </h3>
+
+                <p>
+                    Your destination for fancy,
+                    beautiful and interesting finds.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-section">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-section">
+
+                <h3>
+                    Customer Service
+                </h3>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Delivery Information
+                </a>
+
+                <a href="#">
+                    Returns & Refunds
+                </a>
+
+                <a href="#">
+                    FAQs
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-section">
+
+                <h3>
+                    Follow Us
+                </h3>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Kiisi's Store. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="js/products.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+  </html>
