@@ -602,10 +602,306 @@ function addToWishlist(productId) {
     );
 
 }
+/* =====================================================
+   14. DISPLAY CART
+   ===================================================== */
+
+const cartItemsContainer =
+    document.getElementById("cartItems");
+
+const cartSubtotalElement =
+    document.getElementById("cartSubtotal");
+
+const cartDeliveryElement =
+    document.getElementById("cartDelivery");
+
+const cartTotalElement =
+    document.getElementById("cartTotal");
+
+
+function displayCart() {
+
+    if (!cartItemsContainer) {
+        return;
+    }
+
+
+    /* Empty cart */
+
+    if (cart.length === 0) {
+
+        cartItemsContainer.innerHTML = `
+
+            <div class="empty-cart">
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+                    You haven't added anything yet.
+                </p>
+
+                <a
+                    href="shop.html"
+                    class="hero-button"
+                >
+                    Start Shopping
+                </a>
+
+            </div>
+
+        `;
+
+        updateCartSummary();
+
+        return;
+    }
+
+
+    cartItemsContainer.innerHTML =
+        cart.map(item => {
+
+            const product =
+                products.find(
+                    product => product.id === item.id
+                );
+
+
+            if (!product) {
+                return "";
+            }
+
+
+            return `
+
+                <article class="cart-item">
+
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        class="cart-item-image"
+                    >
+
+
+                    <div class="cart-item-info">
+
+                        <h3>
+                            ${product.name}
+                        </h3>
+
+                        <p class="cart-item-price">
+                            ${formatPrice(product.price)}
+                        </p>
+
+
+                        <div class="quantity-controls">
+
+                            <button
+                                class="quantity-button"
+                                onclick="changeQuantity(
+                                    ${product.id},
+                                    -1
+                                )"
+                            >
+                                −
+                            </button>
+
+
+                            <span class="quantity-number">
+                                ${item.quantity}
+                            </span>
+
+
+                            <button
+                                class="quantity-button"
+                                onclick="changeQuantity(
+                                    ${product.id},
+                                    1
+                                )"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            class="remove-cart-item"
+                            onclick="removeFromCart(
+                                ${product.id}
+                            )"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+
+                    <strong>
+                        ${formatPrice(
+                            product.price *
+                            item.quantity
+                        )}
+                    </strong>
+
+
+                </article>
+
+            `;
+
+        }).join("");
+
+
+    updateCartSummary();
+
+}
 
 
 /* =====================================================
-   14. START WEBSITE
+   15. CHANGE CART QUANTITY
+   ===================================================== */
+
+function changeQuantity(productId, change) {
+
+    const cartItem =
+        cart.find(
+            item => item.id === productId
+        );
+
+
+    const product =
+        products.find(
+            product => product.id === productId
+        );
+
+
+    if (!cartItem || !product) {
+        return;
+    }
+
+
+    cartItem.quantity += change;
+
+
+    /* Prevent quantity going below 1 */
+
+    if (cartItem.quantity <= 0) {
+
+        removeFromCart(productId);
+
+        return;
+    }
+
+
+    /* Prevent buying more than available stock */
+
+    if (cartItem.quantity > product.stock) {
+
+        cartItem.quantity =
+            product.stock;
+
+        alert(
+            "You cannot add more than the available stock."
+        );
+
+    }
+
+
+    saveCart();
+
+    displayCart();
+
+}
+
+
+/* =====================================================
+   16. REMOVE FROM CART
+   ===================================================== */
+
+function removeFromCart(productId) {
+
+    cart =
+        cart.filter(
+            item => item.id !== productId
+        );
+
+
+    saveCart();
+
+    displayCart();
+
+}
+
+
+/* =====================================================
+   17. CART TOTAL
+   ===================================================== */
+
+function updateCartSummary() {
+
+    if (
+        !cartSubtotalElement ||
+        !cartTotalElement
+    ) {
+        return;
+    }
+
+
+    let subtotal = 0;
+
+
+    cart.forEach(item => {
+
+        const product =
+            products.find(
+                product => product.id === item.id
+            );
+
+
+        if (product) {
+
+            subtotal +=
+                product.price *
+                item.quantity;
+
+        }
+
+    });
+
+
+    /*
+       Temporary delivery fee.
+
+       We'll make this dynamic during
+       the checkout stage.
+    */
+
+    const delivery = 0;
+
+
+    const total =
+        subtotal + delivery;
+
+
+    cartSubtotalElement.textContent =
+        formatPrice(subtotal);
+
+
+    cartDeliveryElement.textContent =
+        delivery === 0
+            ? "Calculated at checkout"
+            : formatPrice(delivery);
+
+
+    cartTotalElement.textContent =
+        formatPrice(total);
+
+}
+
+/* =====================================================
+   18. START WEBSITE
    ===================================================== */
 
 displayFeaturedProducts();
