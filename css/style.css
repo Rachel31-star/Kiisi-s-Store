@@ -1,1 +1,860 @@
+/* =====================================================
+   KIISI'S STORE
+   Main Website Styles
+   ===================================================== */
 
+
+/* =========================
+   1. GENERAL RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fffaf7;
+    color: #3b2925;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================
+   2. HEADER
+   ========================= */
+
+header {
+    width: 100%;
+    min-height: 80px;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #f1ded8;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Store logo */
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #8f315d;
+    white-space: nowrap;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 15px;
+    color: #4a3530;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #c21875;
+}
+
+
+/* Search */
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    width: 240px;
+    height: 42px;
+
+    border: 1px solid #e5cfc8;
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background-color: #fffaf7;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 15px;
+
+    color: #3b2925;
+}
+
+.search-box input::placeholder {
+    color: #9c8780;
+}
+
+.search-box button {
+    width: 48px;
+    height: 100%;
+
+    border: none;
+
+    background-color: #f7dce8;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #efc3d6;
+}
+
+
+/* =========================
+   3. HERO SECTION
+   ========================= */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 250, 247, 0.98),
+            rgba(255, 250, 247, 0.65)
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-content {
+    max-width: 600px;
+}
+
+
+.hero-small-text {
+    color: #c21875;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: 1.05;
+
+    color: #3b2925;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-content > p:not(.hero-small-text) {
+    max-width: 480px;
+
+    color: #6e5b55;
+
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Main button */
+
+.hero-button,
+.promotion-button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background-color: #a83c69;
+
+    color: white;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.hero-button:hover,
+.promotion-button:hover {
+    background-color: #7f294f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   4. GENERAL SECTION
+   ========================= */
+
+section {
+    padding: 80px 6%;
+}
+
+section h2 {
+    color: #3b2925;
+
+    font-size: 32px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   5. CATEGORIES
+   ========================= */
+
+.categories {
+    background-color: #fff5f1;
+}
+
+
+.category-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.category-card {
+    background-color: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #f0ddd7;
+
+    transition: 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 12px 30px rgba(90, 40, 55, 0.10);
+}
+
+
+.category-image {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f8dfe8;
+
+    color: #9b6579;
+
+    font-size: 16px;
+}
+
+
+.category-card:nth-child(2) .category-image {
+    background-color: #f2e4d9;
+}
+
+.category-card:nth-child(3) .category-image {
+    background-color: #eadfe9;
+}
+
+.category-card:nth-child(4) .category-image {
+    background-color: #e7e8d8;
+}
+
+
+.category-card h3 {
+    padding: 18px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #4a3530;
+}
+
+
+/* =========================
+   6. SECTION HEADINGS
+   ========================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading a {
+    color: #a83c69;
+
+    font-weight: bold;
+}
+
+.section-heading a:hover {
+    color: #7f294f;
+}
+
+
+/* =========================
+   7. PRODUCT CONTAINER
+   ========================= */
+
+.product-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/*
+   These styles will automatically
+   affect the product cards that
+   JavaScript creates later.
+*/
+
+.product-card {
+    background-color: white;
+
+    border: 1px solid #f0ddd7;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(70, 35, 45, 0.10);
+}
+
+
+.product-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
+
+    background-color: #f7e8e4;
+}
+
+
+.product-info {
+    padding: 18px;
+}
+
+
+.product-name {
+    font-size: 17px;
+
+    color: #3b2925;
+
+    margin-bottom: 7px;
+}
+
+
+.product-price {
+    color: #a83c69;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+.add-to-cart {
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #f3d5e1;
+
+    color: #7f294f;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #a83c69;
+
+    color: white;
+}
+
+
+/* Wishlist heart */
+
+.wishlist-button {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.95);
+
+    color: #a83c69;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   8. NEW ARRIVALS
+   ========================= */
+
+.new-arrivals {
+    background-color: #fff5f1;
+}
+
+
+/* =========================
+   9. PROMOTION SECTION
+   ========================= */
+
+.promotion {
+    min-height: 380px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 6%;
+
+    background:
+        linear-gradient(
+            rgba(139, 49, 87, 0.86),
+            rgba(139, 49, 87, 0.86)
+        ),
+        url("../images/promotion.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.promotion-content {
+    max-width: 650px;
+
+    color: white;
+}
+
+
+.promotion-content p:first-child {
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+.promotion h2 {
+    color: white;
+
+    font-size: clamp(32px, 5vw, 55px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.promotion-content > p:not(:first-child) {
+    margin-bottom: 30px;
+
+    font-size: 17px;
+}
+
+
+.promotion-button {
+    background-color: white;
+
+    color: #8f315d;
+}
+
+.promotion-button:hover {
+    background-color: #fff1f6;
+
+    color: #7f294f;
+}
+
+
+/* =========================
+   10. FOOTER
+   ========================= */
+
+footer {
+    background-color: #3b2925;
+
+    color: #eadbd6;
+}
+
+
+.footer-container {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 65px 6%;
+}
+
+
+.footer-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.footer-section h3 {
+    color: white;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.footer-section p {
+    max-width: 280px;
+
+    color: #cbbab4;
+}
+
+
+.footer-section a {
+    color: #cbbab4;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-section a:hover {
+    color: #f3a9c7;
+}
+
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 20px 6%;
+
+    color: #bba9a3;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   11. MOBILE MENU AREA
+   ========================= */
+
+.menu-button {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #3b2925;
+}
+
+
+/* =========================
+   12. TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 220px;
+    }
+
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   13. MOBILE PHONE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5%;
+
+        gap: 15px;
+    }
+
+
+    .logo {
+        font-size: 21px;
+    }
+
+
+    nav {
+        gap: 13px;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+
+    nav a {
+        font-size: 13px;
+
+        white-space: nowrap;
+    }
+
+
+    .search-box {
+        width: 100%;
+
+        order: 4;
+    }
+
+
+    .hero {
+        min-height: 520px;
+
+        padding: 60px 7%;
+
+        background-position: center;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .hero-content > p:not(.hero-small-text) {
+        font-size: 15px;
+    }
+
+
+    section {
+        padding: 60px 5%;
+    }
+
+
+    section h2 {
+        font-size: 27px;
+    }
+
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .category-image {
+        height: 140px;
+    }
+
+
+    .category-card h3 {
+        font-size: 15px;
+
+        padding: 13px 5px;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+
+    .section-heading a {
+        font-size: 13px;
+
+        white-space: nowrap;
+    }
+
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .product-info {
+        padding: 12px;
+    }
+
+
+    .product-name {
+        font-size: 14px;
+    }
+
+
+    .product-price {
+        font-size: 15px;
+    }
+
+
+    .add-to-cart {
+        padding: 9px;
+
+        font-size: 13px;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 50px 7%;
+    }
+
+
+    .promotion {
+        min-height: 400px;
+    }
+
+                                  }
